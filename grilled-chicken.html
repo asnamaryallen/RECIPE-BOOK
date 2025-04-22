@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grilled Chicken - Yummy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    .nutrition, .comments {
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .comments {
+  margin-top: 25px;
+}
+
+.comments textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.comments button {
+  padding: 8px 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comments button:hover {
+  background-color: #e03c3c;
+}
+
+#commentList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#commentList li {
+  background: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Grilled Chicken</h1>
+    <img src="https://tse3.mm.bing.net/th?id=OIP.nISp0hXeUBcXEdTxbvr63AHaE8&pid=Api&P=0&h=180" alt="Grilled Chicken">
+
+    <h2>Ingredients</h2>
+    <ul>
+      <li>500g chicken pieces</li>
+      <li>1 cup yogurt</li>
+      <li>2 tbsp lemon juice</li>
+      <li>2 tbsp garlic paste</li>
+      <li>1 tsp chili powder, salt, pepper</li>
+      <li>Fresh herbs (thyme, rosemary)</li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <ol>
+      <li>Mix yogurt, lemon juice, garlic paste, spices, and herbs into a marinade.</li>
+      <li>Coat chicken well and refrigerate for 2+ hours.</li>
+      <li>Grill or oven-bake at 200°C until browned and cooked inside.</li>
+      <li>Rest before serving with chutney or veggies.</li>
+    </ol>
+
+    <div class="nutrition">
+      <h2>Nutritional Information</h2>
+      <img src="https://healthyway.ae/wp-content/uploads/2020/12/Grilled-Chicken-1200x2131.png" alt="nutrition" srcset="">
+    </div>
+
+    <div class="comments">
+      <h3>Leave a Comment</h3>
+      <textarea id="commentInput" placeholder="Share your thoughts..."></textarea>
+      <button onclick="addComment()">Post Comment</button>
+      <ul id="commentList"></ul>
+    </div>
+    
+
+    <a href="index.html" class="back-button">&#8592; Back to Home</a>
+  </div>
+  <script>
+    function addComment() {
+      const input = document.getElementById('commentInput');
+      const list = document.getElementById('commentList');
+      const comment = input.value.trim();
+  
+      if (comment) {
+        const li = document.createElement('li');
+        li.textContent = comment;
+        list.appendChild(li);
+        input.value = ''; // Clear input
+      } else {
+        alert("Please enter a comment before posting.");
+      }
+    }
+  </script>
+  
+</body>
+</html>
